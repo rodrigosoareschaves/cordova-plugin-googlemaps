@@ -14,7 +14,8 @@ module.exports = function(ctx) {
     NODE_MODULES_DIR = path.join(projectRoot, "node_modules");
   }
 
-  var xml2js = require(path.join(NODE_MODULES_DIR, 'xml2js'));
+  var xml2js = '../../../node_modules/xml2js';//require(path.join(NODE_MODULES_DIR, 'xml2js'));
+
 
   return Q.Promise(function(resolve, reject, notify) {
     if (fs.existsSync(pluginXmlPath + '.original')) {
