@@ -3,6 +3,11 @@ package plugin.google.maps;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
+// import com.google.android.libraries.maps.model.BitmapDescriptor;
+// import com.google.android.libraries.maps.model.BitmapDescriptorFactory;
+// import com.google.android.libraries.maps.model.GroundOverlay;
+// import com.google.android.libraries.maps.model.GroundOverlayOptions;
+// import com.google.android.libraries.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.GroundOverlay;
@@ -207,6 +212,7 @@ public class PluginGroundOverlay extends MyPlugin implements MyPluginInterface  
     }
 
     synchronized (pluginMap.objects) {
+      pluginMap.objects.remove(id);
       pluginMap.objects.remove(id.replace("groundoverlay_", "groundoverlay_property_"));
       pluginMap.objects.remove(id.replace("groundoverlay_", "groundoverlay_initOpts_"));
       pluginMap.objects.remove(id.replace("groundoverlay_", "groundoverlay_bounds_"));

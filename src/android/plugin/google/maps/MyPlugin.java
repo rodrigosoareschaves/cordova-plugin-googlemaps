@@ -4,6 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.util.Log;
 
+// import com.google.android.libraries.maps.GoogleMap;
+// import com.google.android.libraries.maps.model.Circle;
+// import com.google.android.libraries.maps.model.GroundOverlay;
+// import com.google.android.libraries.maps.model.LatLng;
+// import com.google.android.libraries.maps.model.Marker;
+// import com.google.android.libraries.maps.model.Polygon;
+// import com.google.android.libraries.maps.model.Polyline;
+// import com.google.android.libraries.maps.model.TileOverlay;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.GroundOverlay;
@@ -27,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 
 public class MyPlugin extends CordovaPlugin implements MyPluginInterface {
   public MyPlugin self = null;
