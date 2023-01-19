@@ -4,7 +4,19 @@
 |----------|---------------------------|
 | [![](https://img.shields.io/npm/dm/cordova-plugin-googlemaps.svg)](https://npm-stat.com/charts.html?package=cordova-plugin-googlemaps) |[![](https://travis-ci.org/mapsplugin/cordova-plugin-googlemaps.svg?branch=multiple_maps)](https://travis-ci.org/mapsplugin/cordova-plugin-googlemaps/branches) |
 
-  This plugin displays Google Maps in your application.
+  This is a fork from mapsplugin/cordova-plugin-googlemaps . That is still using the deprecated lib: com.google.android.libraries.maps:maps:3.1.0-beta that is causing an error on my app, similar to what's reported here: https://github.com/googlemaps/android-maps-utils/issues/812 
+  On my app the error was:
+    Fatal Exception: java.lang.NegativeArraySizeException: -33
+       at dalvik.system.VMRuntime.newNonMovableArray(VMRuntime.java)
+
+  So, I just recovery the current Google libs:
+        'com.google.android.gms:play-services-maps:17.0.1'
+        'com.google.maps.android:android-maps-utils:3.1.1'
+  And I needed to adjust the Androidx component to avoid replace the libs:
+      ["com.google.android.gms.maps.model", "com.google.android.libraries.maps.model"],
+      ["com.google.android.gms.maps", "com.google.android.libraries.maps"]
+      * I just commented the line above
+
   This plugin uses these libraries for each platforms:
 
   - Android : [Google Maps Android API](https://developers.google.com/maps/documentation/android/)
