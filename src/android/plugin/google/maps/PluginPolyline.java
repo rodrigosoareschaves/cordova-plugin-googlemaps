@@ -20,6 +20,7 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.NullPointerException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -208,6 +209,8 @@ public class PluginPolyline extends MyPlugin implements MyPluginInterface  {
           polyline.setPoints(path);
           pluginMap.objects.put(propertyId, PluginUtil.getBoundsFromPath(path));
         } catch (JSONException e) {
+          e.printStackTrace();
+        }catch(NullPointerException e){
           e.printStackTrace();
         }
         callbackContext.success();
